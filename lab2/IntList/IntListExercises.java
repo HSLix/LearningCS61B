@@ -10,7 +10,7 @@ public class IntListExercises {
      */
     public static void addConstant(IntList lst, int c) {
         IntList head = lst;
-        while (head.rest != null) {
+        while (head!= null) {
             head.first += c;
             head = head.rest;
         }
@@ -26,7 +26,7 @@ public class IntListExercises {
     public static void setToZeroIfMaxFEL(IntList L) {
         IntList p = L;
         while (p != null) {
-            if (firstDigitEqualsLastDigit(max(p))) {
+            if (firstDigitEqualsLastDigit(max(p))){
                 p.first = 0;
             }
             p = p.rest;
@@ -51,7 +51,7 @@ public class IntListExercises {
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
         int lastDigit = x % 10;
-        while (x > 10) {
+        while (x >= 10) {
             x = x / 10;
         }
         int firstDigit = x % 10;
@@ -77,6 +77,31 @@ public class IntListExercises {
             lst.first *= lst.first;
         }
 
-        return currElemIsPrime || squarePrimes(lst.rest);
+        return squarePrimes(lst.rest) || currElemIsPrime;
+    }
+
+    public static void main(String[] args) {
+
+        /** Below this line is the starter Code*/
+        //IntList lst = new IntList(1, new IntList(2, new IntList(3, null)));
+        // Creates an empty list!
+        IntList empty = IntList.of();
+        // Creates an IntList one element, 7
+        IntList oneElem = IntList.of(7);
+        // Creates an IntList with many elements
+        IntList manyElems = IntList.of(5, 4, 3, 2, 1);
+
+        /* Expected Behavior */
+
+        IntList lst = IntList.of(1, 2, 3);
+
+        addConstant(lst, 1);
+        System.out.println(lst.toString());
+        // Output: 2 -> 3 -> 4
+
+        addConstant(lst, 4);
+        System.out.println(lst.toString());
+        // Output: 6 -> 7 -> 8
+
     }
 }

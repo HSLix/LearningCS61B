@@ -54,7 +54,7 @@ public class IntList {
      * IntList myList = IntList.of(1, 2, 3, 4, 5);
      * will create an IntList 1 -> 2 -> 3 -> 4 -> 5 -> null.
      *
-     * You can pass in any number of arguments to IntList.of and it will work:
+     * You can pass in any number of argumoents to IntList.f and it will work:
      * IntList mySmallerList = IntList.of(1, 4, 9);
      */
     public static IntList of(int ...argList) {
