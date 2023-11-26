@@ -1,5 +1,8 @@
 package randomizedtest;
 
+import org.junit.Test;
+import org.junit.Assert;
+
 /** Array based list.
  *  @author Josh Hug
  */
@@ -52,4 +55,6 @@ public class AListNoResizing<Item> {
         size = size - 1;
         return x;
     }
+
+
 }
